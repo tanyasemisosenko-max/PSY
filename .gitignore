@@ -1,0 +1,41 @@
+# Local tooling / agent
+.claude/
+tools/
+
+# Backups and rollback copies
+*backup*
+*_backup*
+*failed*
+
+# Debug, metrics, previews
+*debug*
+hero-metrics*
+contact-success-popup.png
+contact-subtitle-position.png
+icons-preview.html
+
+# Freeze docs (local only)
+SCREENS_*_FREEZE.md
+SCREEN_*_FREEZE.md
+
+# Temp / one-off scripts
+*.py
+*.mjs
+*.ps1
+_*.txt
+_abs_write_test.txt
+_copy_backups_requests.ps1
+
+# Design sources (do not deploy)
+*.psd
+*.fig
+*.sketch
+*.ai
+*.xd
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
