@@ -141,8 +141,9 @@
           body: new URLSearchParams({ name, contact, message }).toString(),
         });
 
-        form.classList.add('is-sent');
         openContactModal(document.getElementById('contact-success-modal'));
+        form.reset();
+        form.classList.remove('is-sent');
       } catch (err) {
         console.error(
           '[contact form] Не удалось отправить заявку в Google Sheets. Проверьте сеть и развёртывание Apps Script.',
