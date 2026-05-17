@@ -128,8 +128,8 @@
 
       if (!name || !contact) return;
 
-      const submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) submitBtn.disabled = true;
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = true;
 
       try {
         await fetch(GOOGLE_SHEETS_URL, {
@@ -142,15 +142,30 @@
         });
 
         openContactModal(document.getElementById('contact-success-modal'));
-        form.reset();
+
         form.classList.remove('is-sent');
+        const nameField = form.querySelector('[name="name"]');
+        const contactField = form.querySelector('[name="contact"]');
+        const messageField = form.querySelector('[name="message"]');
+        if (nameField) nameField.value = '';
+        if (contactField) contactField.value = '';
+        if (messageField) messageField.value = '';
+        const consentCheckbox = form.querySelector('[type="checkbox"]');
+        if (consentCheckbox) consentCheckbox.checked = false;
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.style.display = '';
+        }
       } catch (err) {
         console.error(
           '[contact form] Не удалось отправить заявку в Google Sheets. Проверьте сеть и развёртывание Apps Script.',
           err
         );
       } finally {
-        if (submitBtn) submitBtn.disabled = false;
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.style.display = '';
+        }
       }
     });
   }
