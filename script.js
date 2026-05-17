@@ -114,10 +114,13 @@
     });
   }
 
-  /* ── FORM SUBMIT ── */
+  /* ── FORM SUBMIT (#contact → Google Sheets, no-cors) ── */
+  const GOOGLE_SHEETS_URL =
+    'https://script.google.com/macros/s/AKfycby2CJUnR7A80ebd5QYN7XEhmmk17ifHcVfoEPHsDaGss59V9pjT6UejFS-mcjT7yBzsFQ/exec';
+
   const form = document.querySelector('[data-form]');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = form.querySelector('[name="name"]')?.value?.trim();
       const contact = form.querySelector('[name="contact"]')?.value?.trim();
@@ -125,17 +128,29 @@
 
       if (!name || !contact) return;
 
-      // Открываем письмо в почтовом клиенте пользователя.
-      // Это самый простой и надёжный путь без серверной части.
-      const subject = encodeURIComponent('Заявка с сайта «Примерочная себя»');
-      const body = encodeURIComponent(
-        `Имя: ${name}\nКонтакт: ${contact}\n\nС чем хочется прийти:\n${message}`
-      );
-      const mailto = `mailto:semisoshenko1977@mail.ru?subject=${subject}&body=${body}`;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
 
-      form.classList.add('is-sent');
-      openContactModal(document.getElementById('contact-success-modal'));
-      window.location.href = mailto;
+      try {
+        await fetch(GOOGLE_SHEETS_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+          },
+          body: new URLSearchParams({ name, contact, message }).toString(),
+        });
+
+        form.classList.add('is-sent');
+        openContactModal(document.getElementById('contact-success-modal'));
+      } catch (err) {
+        console.error(
+          '[contact form] Не удалось отправить заявку в Google Sheets. Проверьте сеть и развёртывание Apps Script.',
+          err
+        );
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     });
   }
 
