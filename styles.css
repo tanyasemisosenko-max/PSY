@@ -5290,9 +5290,160 @@ header.site-header {
     display: none;
   }
 
+  /* Mobile recognition — экран 2 (только <=640) */
   .recognition-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background: #fbf6f0;
+    padding: 48px 22px 64px;
     margin-top: 32px;
-    padding-top: 32px;
+    margin-bottom: 48px;
+    min-height: auto;
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden;
     box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .recognition-section .recognition-left-decor-wrap,
+  .recognition-section .site-header {
+    display: none !important;
+  }
+
+  .recognition-section .recognition-photo {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    height: auto !important;
+    margin: 0 auto 36px !important;
+    order: 3;
+    overflow: hidden;
+    border-top-left-radius: 72px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    z-index: auto;
+    background: none;
+    box-shadow: none;
+  }
+
+  .recognition-section .recognition-photo img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+
+  .recognition-section .recognition-content {
+    display: contents;
+  }
+
+  .recognition-section .recognition-title {
+    order: 1;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 38px !important;
+    line-height: 1.08 !important;
+    margin: 0 0 24px !important;
+    text-align: left !important;
+  }
+
+  .recognition-section .recognition-subtitle {
+    order: 2;
+    font-size: 20px !important;
+    line-height: 1.45 !important;
+    margin: 0 0 32px !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .recognition-section .recognition-cards {
+    order: 4;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none;
+  }
+
+  .recognition-section .recognition-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0;
+    padding: 20px 12px 18px !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .recognition-section .recognition-icon-wrap {
+    margin: 0 auto 12px !important;
+    width: 64px !important;
+    height: 64px !important;
+    flex-shrink: 0;
+  }
+
+  .recognition-section .recognition-icon-img {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .recognition-section .recognition-card-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+  }
+
+  .recognition-section .recognition-divider {
+    display: none !important;
+  }
+
+  .recognition-section .recognition-quote {
+    order: 5;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 24px !important;
+    line-height: 1.35 !important;
+    margin: 40px 0 32px !important;
+    text-align: left !important;
+  }
+
+  .recognition-section .recognition-button {
+    order: 6;
+    width: 100% !important;
+    max-width: 340px !important;
+    height: 58px !important;
+    font-size: 18px !important;
+    margin: 0 auto !important;
+    align-self: center;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
+
+  #requests.requests-section,
+  .requests.requests-section {
+    margin-top: 0 !important;
+    padding-top: 48px;
   }
 }
