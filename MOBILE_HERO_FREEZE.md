@@ -1,7 +1,10 @@
 # FREEZE — mobile hero · экран 1 · `.hero-section` / `#hero`
 
 **Дата freeze:** 2026-05-18  
-**Статус:** FROZEN (mobile)  
+**Статус:** draft / needs mobile rebuild validation  
+
+Mobile hero cannot be considered final yet. The issue is not only screen width, but the original desktop layout logic. Hero must be validated as part of the full mobile rebuild on 360 / 375 / 390 / 414 / 430px.
+
 **Утверждающий коммит:** `1b483de` — *Mobile hero full layout for small screens*  
 **Desktop:** без изменений — см. `SCREENS_1-10_FREEZE.md` (1448×1086, `@media (min-width: 961px)`)
 
@@ -119,4 +122,4 @@
 - `SCREENS_1-10_FREEZE.md` — desktop
 - `SCREEN_10_CONTACT_FREEZE.md` — экран 10
 
-**Mobile hero freeze — активен с 2026-05-18.**
+**Mobile hero — draft; rebuild validation pending (с 2026-05-18).**
