@@ -5066,6 +5066,17 @@ header.site-header {
     display: none;
   }
 
+  .site-header,
+  .formats-topbar,
+  .after-topbar,
+  .approach-topbar,
+  .process-topbar,
+  .reviews-topbar,
+  .contact-topbar,
+  [class*="topbar"] {
+    display: none !important;
+  }
+
   .site-header .btn,
   .site-header .btn-primary,
   .site-header .header-button,
@@ -5087,7 +5098,7 @@ header.site-header {
   }
 
   .hero-section .site-header {
-    display: block;
+    display: block !important;
     position: relative;
     z-index: 10;
     width: 100%;
