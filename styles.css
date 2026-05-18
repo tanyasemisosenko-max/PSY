@@ -5203,91 +5203,204 @@ header.site-header {
 
 }
 
-/* Mobile hero — полноценный вертикальный экран (только <=640) */
+/* Mobile hero — rebuild pass (только <=640) · MOBILE_HERO_REBUILD_SPEC.md */
 @media (max-width: 640px) {
   .hero-section {
-    background: #fbf6f0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 auto;
     padding: 32px 22px 56px;
-    min-height: auto;
+    background: #fbf6f0;
     overflow-x: hidden;
     box-sizing: border-box;
   }
 
   .hero-section .hero-left-composition,
-  .hero-section .hero-benefits {
+  .hero-section .hero-benefits,
+  .hero-section .main-nav,
+  .hero-section .header-button,
+  .hero-section .button-secondary {
     display: none !important;
   }
 
   .hero-section .site-header {
-    padding: 0;
-    margin: 0;
-    background: none;
+    display: block !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    z-index: auto;
   }
 
   .hero-section .logo {
+    display: block;
+    position: relative;
     font-size: 32px !important;
-    margin-bottom: 42px !important;
-    line-height: 1.1;
+    line-height: 1.1 !important;
+    margin: 0 0 42px !important;
+    max-width: 100%;
+    white-space: normal;
   }
 
   .hero-section .hero {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    grid-template-columns: none !important;
+    gap: 0;
+    z-index: auto;
   }
 
   .hero-section .hero-content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
     padding: 0 !important;
-    width: 100%;
-    max-width: 100%;
+    margin: 0 !important;
+    z-index: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
   }
 
   .hero-section .hero-title,
   #hero h1 {
-    font-size: 38px !important;
-    line-height: 1.08 !important;
+    position: relative !important;
+    width: 100% !important;
     max-width: 100% !important;
     margin: 0 0 24px !important;
+    padding: 0 !important;
+    transform: none !important;
+    font-size: 38px !important;
+    line-height: 1.08 !important;
+    text-align: left !important;
   }
 
   .hero-section .hero-description {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 32px !important;
+    padding: 0 !important;
+    transform: none !important;
     font-size: 20px !important;
     line-height: 1.45 !important;
-    margin: 0 0 32px !important;
+    text-align: left !important;
   }
 
   .hero-section .hero-actions {
-    margin-top: 0 !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 32px !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
     align-items: flex-start !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
   }
 
   .hero-section .button-primary {
+    position: relative !important;
+    display: inline-flex !important;
     width: 100% !important;
     max-width: 340px !important;
+    min-width: 0 !important;
     height: 58px !important;
     font-size: 18px !important;
-    margin-bottom: 48px !important;
+    margin: 0 !important;
     box-sizing: border-box;
   }
 
   .hero-section .hero-note {
-    margin-top: 0 !important;
-    margin-bottom: 32px !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 32px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
     font-size: 14px !important;
     line-height: 1.45 !important;
+    z-index: auto;
+  }
+
+  .hero-section .hero-note-text,
+  .hero-section .hero-note p {
+    max-width: 100% !important;
   }
 
   .hero-section .hero-photo {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    align-self: center !important;
     width: 100% !important;
     max-width: 340px !important;
-    margin: 0 auto !important;
-    max-height: 400px;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 420px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
     border-top-left-radius: 72px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    aspect-ratio: auto !important;
+    z-index: auto;
+    box-sizing: border-box;
+  }
+
+  .hero-section .hero-photo img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    object-position: center center;
+    filter: none;
   }
 
   .hero-section .hero-photo::after {
-    display: none;
+    display: none !important;
   }
 
   /* Mobile recognition — экран 2 (только <=640) */
