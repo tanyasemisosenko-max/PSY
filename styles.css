@@ -5066,18 +5066,59 @@ header.site-header {
     display: none;
   }
 
+  .site-header .btn,
+  .site-header .btn-primary,
+  .site-header .header-button,
+  .site-header a.header-button {
+    display: none !important;
+  }
+
+  .mobile-cta,
+  .mobile-sticky-cta,
+  .sticky-cta,
+  .fixed-cta,
+  body > a.btn-primary,
+  body > .btn-primary {
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: 0 !important;
+  }
+
   .hero-section .site-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 20px;
+    display: block;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 24px 0;
     height: auto;
     box-sizing: border-box;
+    overflow: visible;
+    background: linear-gradient(180deg, rgba(247, 237, 229, 0.98) 0%, rgba(247, 237, 229, 0) 100%);
+  }
+
+  .hero-section .logo {
+    display: block;
+    position: relative;
+    z-index: 11;
+    font-size: 30px !important;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.1;
+    text-align: left;
+  }
+
+  .hero-section .hero-left-composition {
+    display: none !important;
   }
 
   .hero-section .hero-content {
-    padding: 100px 20px 32px !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 24px 48px !important;
     box-sizing: border-box;
   }
 
@@ -5087,8 +5128,9 @@ header.site-header {
     max-width: 100% !important;
     margin: 0 !important;
     transform: none !important;
-    font-size: 34px !important;
+    font-size: 42px !important;
     line-height: 1.08 !important;
+    text-align: left !important;
   }
 
   .hero-section .hero-description {
@@ -5098,18 +5140,28 @@ header.site-header {
     transform: none !important;
     font-size: 16px !important;
     line-height: 1.5 !important;
+    text-align: left !important;
   }
 
   .hero-section .hero-actions {
     width: 100% !important;
     max-width: 100% !important;
-    flex-wrap: wrap !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    margin-top: 28px !important;
   }
 
-  .hero-section .button-primary,
   .hero-section .button-secondary {
+    display: none !important;
+  }
+
+  .hero-section .button-primary {
+    position: static !important;
     width: 100% !important;
     min-width: 0 !important;
+    max-width: 100% !important;
   }
 
   .hero-section .hero-note {
@@ -5138,9 +5190,4 @@ header.site-header {
     grid-template-columns: 1fr !important;
   }
 
-  .hero-section .hero-left-composition {
-    max-width: 42vw !important;
-    width: auto !important;
-    left: 0 !important;
-  }
 }
