@@ -5191,3 +5191,97 @@ header.site-header {
   }
 
 }
+
+/* Mobile hero — полноценный вертикальный экран (только <=640) */
+@media (max-width: 640px) {
+  .hero-section {
+    background: #fbf6f0;
+    padding: 32px 22px 56px;
+    min-height: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .hero-section .hero-left-composition,
+  .hero-section .hero-benefits {
+    display: none !important;
+  }
+
+  .hero-section .site-header {
+    padding: 0;
+    margin: 0;
+    background: none;
+  }
+
+  .hero-section .logo {
+    font-size: 32px !important;
+    margin-bottom: 42px !important;
+    line-height: 1.1;
+  }
+
+  .hero-section .hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-section .hero-content {
+    padding: 0 !important;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-section .hero-title,
+  #hero h1 {
+    font-size: 38px !important;
+    line-height: 1.08 !important;
+    max-width: 100% !important;
+    margin: 0 0 24px !important;
+  }
+
+  .hero-section .hero-description {
+    font-size: 20px !important;
+    line-height: 1.45 !important;
+    margin: 0 0 32px !important;
+  }
+
+  .hero-section .hero-actions {
+    margin-top: 0 !important;
+    align-items: flex-start !important;
+  }
+
+  .hero-section .button-primary {
+    width: 100% !important;
+    max-width: 340px !important;
+    height: 58px !important;
+    font-size: 18px !important;
+    margin-bottom: 48px !important;
+    box-sizing: border-box;
+  }
+
+  .hero-section .hero-note {
+    margin-top: 0 !important;
+    margin-bottom: 32px !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  .hero-section .hero-photo {
+    width: 100% !important;
+    max-width: 340px !important;
+    margin: 0 auto !important;
+    max-height: 400px;
+    border-top-left-radius: 72px;
+  }
+
+  .hero-section .hero-photo::after {
+    display: none;
+  }
+
+  .recognition-section {
+    margin-top: 32px;
+    padding-top: 32px;
+    box-sizing: border-box;
+  }
+}
