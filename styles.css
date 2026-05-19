@@ -6687,4 +6687,311 @@ header.site-header {
     position: relative;
     z-index: 1;
   }
+
+  /* Mobile approach — экран 7 (только <=640) · MOBILE_APPROACH_REBUILD_SPEC.md */
+  #approach.approach,
+  #approach.approach.section,
+  #approach.section#approach {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 auto 56px !important;
+    padding: 48px 22px 64px !important;
+    background: var(--bg-card, #fff);
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    box-sizing: border-box;
+    isolation: auto;
+  }
+
+  #approach::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-image: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  #approach .approach-topbar,
+  #approach .approach-logo,
+  #approach .approach-nav,
+  #approach .approach-nav-link,
+  #approach .approach-top-button {
+    display: none !important;
+  }
+
+  #approach > .container {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: 0;
+    box-sizing: border-box;
+  }
+
+  #approach .section-head,
+  #approach .section-head.section-head-center {
+    order: 1;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 28px !important;
+    padding: 0 !important;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  #approach .section-head h2,
+  #approach .section-head h2.serif {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 16px !important;
+    padding: 0 !important;
+    font-size: 38px !important;
+    line-height: 1.08 !important;
+    text-align: center !important;
+    color: var(--text-heading, #3f2c23) !important;
+  }
+
+  #approach .section-head .section-sub,
+  #approach .section-sub {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: 20px !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+    color: var(--text-muted, #7a6a62) !important;
+  }
+
+  #approach .cards-grid.cards-3,
+  #approach ul.cards-grid.cards-3 {
+    order: 2;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    height: auto !important;
+    margin: 0 auto 28px !important;
+    padding: 0 !important;
+    list-style: none;
+    justify-content: stretch;
+    align-items: stretch;
+    box-sizing: border-box;
+  }
+
+  #approach .card,
+  #approach .card.card-rich,
+  #approach .card.card-rich.card-tall,
+  #approach .card.card-tall {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+    padding: 28px 22px 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 14px !important;
+    box-sizing: border-box;
+    transform: none !important;
+  }
+
+  #approach .card:hover,
+  #approach .card:active {
+    transform: none !important;
+  }
+
+  #approach .card-icon,
+  #approach .card-icon.card-icon-large {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 68px !important;
+    height: 68px !important;
+    margin: 0 auto 4px !important;
+    flex-shrink: 0;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #approach .card-icon img {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  #approach .card h3,
+  #approach .card.card-rich h3,
+  #approach .card.card-tall h3 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    color: var(--text-heading, #3f2c23) !important;
+  }
+
+  #approach .card p {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    color: var(--text-muted, #7a6a62) !important;
+  }
+
+  #approach .approach-quote {
+    order: 3;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 auto 28px !important;
+    padding: 24px 20px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    text-align: center !important;
+    background: var(--bg-accent-soft, #f6ebe4) !important;
+    border-radius: var(--r-pill, 999px) !important;
+    overflow: visible !important;
+    box-sizing: border-box;
+    color: var(--accent, #c46a55) !important;
+  }
+
+  #approach .approach-quote * {
+    color: var(--accent, #c46a55) !important;
+  }
+
+  #approach .approach-quote .quote-mark {
+    display: none !important;
+  }
+
+  #approach .approach-quote-text {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: var(--serif);
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    transform: none !important;
+    box-sizing: border-box;
+  }
+
+  #approach .quote-branch {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    width: 140px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 4px auto 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    object-fit: contain;
+    opacity: 0.9 !important;
+    transform: none !important;
+    pointer-events: none;
+  }
+
+  #approach .section-cta {
+    order: 4;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  #approach .section-cta .btn,
+  #approach .section-cta .btn.btn-primary,
+  #approach a.btn.btn-primary {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    max-width: 340px !important;
+    min-width: 0 !important;
+    height: 58px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    font-size: 18px !important;
+    line-height: 1;
+    white-space: normal;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 16px;
+    transform: none !important;
+  }
+
+  #approach + #process,
+  #approach + #process.section,
+  #approach.approach + #process,
+  #approach.section + #process.section {
+    margin-top: 0 !important;
+    padding-top: 48px !important;
+    position: relative;
+    z-index: 1;
+  }
 }
