@@ -5403,40 +5403,50 @@ header.site-header {
     display: none !important;
   }
 
-  /* Mobile recognition — экран 2 (только <=640) */
-  .recognition-section {
+  /* Mobile recognition — экран 2 (только <=640) · MOBILE_RECOGNITION_REBUILD_SPEC.md */
+  .recognition-section,
+  #recognition.recognition-section {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background: #fbf6f0;
-    padding: 48px 22px 64px;
-    margin-top: 32px;
-    margin-bottom: 48px;
-    min-height: auto;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
+    min-height: 0 !important;
     max-height: none !important;
-    overflow: hidden;
+    margin: 40px auto 56px !important;
+    padding: 48px 22px 64px !important;
+    background: #fbf6f0;
+    overflow-x: hidden;
+    overflow-y: visible;
     box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
+    gap: 0;
   }
 
   .recognition-section .recognition-left-decor-wrap,
-  .recognition-section .site-header {
+  .recognition-section .recognition-left-decor,
+  .recognition-section .site-header,
+  .recognition-section .main-nav,
+  .recognition-section .header-button,
+  .recognition-section .recognition-divider {
     display: none !important;
   }
 
+  /* В DOM фото идёт до .recognition-content — order + display:contents задают порядок по spec */
   .recognition-section .recognition-photo {
     position: relative !important;
     top: auto !important;
     right: auto !important;
     left: auto !important;
     bottom: auto !important;
+    align-self: center !important;
+    order: 3;
     width: 100% !important;
     max-width: 340px !important;
     height: auto !important;
-    margin: 0 auto 36px !important;
-    order: 3;
+    margin: 0 auto 32px !important;
+    padding: 0 !important;
     overflow: hidden;
     border-top-left-radius: 72px;
     border-top-right-radius: 0;
@@ -5445,19 +5455,32 @@ header.site-header {
     z-index: auto;
     background: none;
     box-shadow: none;
+    flex-shrink: 0;
+    box-sizing: border-box;
   }
 
   .recognition-section .recognition-photo img {
     width: 100%;
     height: auto;
     max-height: 420px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     object-fit: cover;
     object-position: center center;
-    display: block;
   }
 
   .recognition-section .recognition-content {
     display: contents;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: auto;
   }
 
   .recognition-section .recognition-title {
@@ -5467,38 +5490,55 @@ header.site-header {
     top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
+    margin: 0 0 24px !important;
+    padding: 0 !important;
     font-size: 38px !important;
     line-height: 1.08 !important;
-    margin: 0 0 24px !important;
     text-align: left !important;
+    box-sizing: border-box;
   }
 
   .recognition-section .recognition-subtitle {
     order: 2;
-    font-size: 20px !important;
-    line-height: 1.45 !important;
-    margin: 0 0 32px !important;
-    text-align: left !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
+    margin: 0 0 32px !important;
+    padding: 0 !important;
+    font-size: 20px !important;
+    line-height: 1.45 !important;
+    text-align: left !important;
+    box-sizing: border-box;
   }
 
   .recognition-section .recognition-cards {
     order: 4;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 16px !important;
+    row-gap: 16px !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     list-style: none;
+    box-sizing: border-box;
   }
 
   .recognition-section .recognition-card {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
     width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     min-height: 0;
+    margin: 0 !important;
     padding: 20px 12px 18px !important;
     box-sizing: border-box;
     display: flex;
@@ -5527,23 +5567,30 @@ header.site-header {
     line-height: 1.35 !important;
   }
 
-  .recognition-section .recognition-divider {
-    display: none !important;
-  }
-
   .recognition-section .recognition-quote {
     order: 5;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
+    margin: 32px 0 28px !important;
+    padding: 0 !important;
     font-family: 'Cormorant Garamond', 'Playfair Display', serif;
     font-size: 24px !important;
     line-height: 1.35 !important;
-    margin: 40px 0 32px !important;
     text-align: left !important;
+    box-sizing: border-box;
   }
 
   .recognition-section .recognition-button {
     order: 6;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
     width: 100% !important;
     max-width: 340px !important;
     height: 58px !important;
@@ -5552,11 +5599,15 @@ header.site-header {
     align-self: center;
     box-sizing: border-box;
     border-radius: 16px;
+    transform: none !important;
   }
 
-  #requests.requests-section,
-  .requests.requests-section {
+  .recognition-section + #requests.requests-section,
+  .recognition-section + .requests.requests-section,
+  #recognition + #requests.requests-section {
     margin-top: 0 !important;
-    padding-top: 48px;
+    padding-top: 48px !important;
+    position: relative;
+    z-index: 1;
   }
 }
