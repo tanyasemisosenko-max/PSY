@@ -7863,4 +7863,186 @@ header.site-header {
     position: relative;
     z-index: 1;
   }
+
+  /* Mobile safe inset — screens 1–10 (post owner review, только <=640) */
+  .hero-section,
+  .recognition-section,
+  #recognition.recognition-section,
+  .requests-section,
+  #requests.requests-section,
+  #requests.requests.requests-section,
+  #formats.formats,
+  #formats.formats.section,
+  #formats.formats.section-soft,
+  #after.after,
+  #after.after.section,
+  #after.section#after,
+  #about.about,
+  #about.about.section,
+  #about.section#about,
+  #approach.approach,
+  #approach.approach.section,
+  #approach.section#approach,
+  #process.process,
+  #process.process.section,
+  #process.section#process,
+  #reviews.reviews,
+  #reviews.reviews.section,
+  #reviews.section#reviews,
+  #contact.contact,
+  #contact.contact.section,
+  #contact.section#contact {
+    padding-left: 26px !important;
+    padding-right: 26px !important;
+  }
+
+  .hero-section .hero-description,
+  .recognition-section .recognition-card-text,
+  .requests-section .requests-card-text,
+  .requests-section .card.card-rich p.requests-card-text,
+  .hero-section .hero-content p,
+  .recognition-section .recognition-subtitle,
+  .recognition-section .recognition-title,
+  .requests-section .requests-subtitle,
+  .requests-section .requests-title,
+  .requests-section .section-sub.requests-subtitle,
+  #formats .formats-subtitle,
+  #formats .format-text,
+  #formats .formats-note,
+  #formats .format-note,
+  #after .section-sub,
+  #after .step p,
+  #after .quote-soft,
+  #after .after-cta .hero-micro,
+  #about .section-sub,
+  #about .about-body p,
+  #about .about-quote,
+  #approach .section-sub,
+  #approach .card p,
+  #approach .approach-quote-text,
+  #process .section-sub,
+  #process .cards-process .card p,
+  #process .hero-micro,
+  #reviews .section-sub,
+  #reviews .review-text,
+  #reviews .review p.review-text,
+  #reviews .reviews-note,
+  #contact .contact-text .section-sub,
+  #contact .contact-form-lead,
+  #contact .contact-form-micro,
+  #contact .contact-form .hero-micro,
+  #contact .contact-direct-line,
+  #formats .section-head p,
+  #after .section-head p,
+  #about .section-head p,
+  #approach .section-head p,
+  #process .section-head p,
+  #reviews .section-head p {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .hero-section .hero-actions {
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .hero-section .button-primary,
+  .recognition-section .recognition-button,
+  .requests-section .requests-button,
+  .requests-section .btn.btn-primary.requests-button {
+    width: 100% !important;
+    max-width: 320px !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    white-space: normal !important;
+    box-sizing: border-box;
+  }
+
+  #formats .formats-cta .btn,
+  #formats .formats-cta .btn-primary,
+  #after .after-cta .btn,
+  #after .after-cta .btn.btn-primary,
+  #about .btn-primary,
+  #about a.btn.btn-primary,
+  #about .btn.btn-primary,
+  #approach .section-cta .btn,
+  #approach .section-cta .btn.btn-primary,
+  #process .btn-primary,
+  #process a.btn.btn-primary,
+  #reviews .section-cta .btn,
+  #reviews .section-cta .btn.btn-primary,
+  #contact .btn-block,
+  #contact .contact-form .btn.btn-primary.btn-block,
+  #contact .contact-form button[type="submit"] {
+    width: 100% !important;
+    max-width: 320px !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    box-sizing: border-box;
+  }
+
+  .recognition-section .recognition-cards,
+  .requests-section .requests-grid,
+  .requests-section .requests-container .requests-grid,
+  .requests-section .cards-grid.cards-6.requests-grid,
+  #formats .formats-grid,
+  #after .steps-grid,
+  #approach .cards-grid,
+  #approach ul.cards-grid.cards-3,
+  #process .cards-grid.cards-process,
+  #process ul.cards-grid.cards-2.cards-process,
+  #reviews .reviews-grid,
+  #reviews ul.reviews-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    column-gap: 14px !important;
+    row-gap: 14px !important;
+    padding-left: 0 !important;
+    padding-right: 2px !important;
+    box-sizing: border-box;
+  }
+
+  .recognition-section .recognition-card,
+  .requests-section .requests-card,
+  .requests-section .card.card-rich.requests-card,
+  #formats .format-card,
+  #after .step,
+  #approach .card,
+  #approach .card.card-rich,
+  #approach .card.card-rich.card-tall,
+  #process .cards-process .card,
+  #process .cards-process .card.card-rich,
+  #reviews .review {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    box-sizing: border-box;
+  }
+
+  #contact .contact-form,
+  #contact .contact-form.reveal,
+  #contact form.contact-form[data-form] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box;
+  }
+
+  #contact .contact-form .form-row,
+  #contact .contact-form .form-row label,
+  #contact .contact-form .form-row input,
+  #contact .contact-form .form-row textarea,
+  #contact .contact-form .form-check {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
 }
