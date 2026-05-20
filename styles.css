@@ -8045,4 +8045,255 @@ header.site-header {
     min-width: 0 !important;
     box-sizing: border-box;
   }
+
+  /* Mobile letter modal — Requests + Formats letters (только <=640) */
+  .request-letter-overlay[hidden] {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .request-letter-overlay {
+    position: fixed !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    padding:
+      max(12px, env(safe-area-inset-top, 0px))
+      max(12px, env(safe-area-inset-right, 0px))
+      max(12px, env(safe-area-inset-bottom, 0px))
+      max(12px, env(safe-area-inset-left, 0px)) !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-dialog {
+    position: relative !important;
+    flex: 0 1 auto !important;
+    width: 100% !important;
+    max-width: calc(100vw - 24px) !important;
+    max-width: calc(100dvw - 24px) !important;
+    min-width: 0 !important;
+    max-height: calc(100vh - 24px) !important;
+    max-height: calc(100dvh - 24px) !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box !important;
+    border-radius: 18px !important;
+  }
+
+  .request-letter-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-panel,
+  #first-meeting-letter.request-letter-panel,
+  #individual-letter.request-letter-panel,
+  #deep-work-letter.request-letter-panel {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 16px 16px 24px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  .request-letter-panel > .request-letter-kicker,
+  .request-letter-panel > .request-letter-divider,
+  .request-letter-panel > .request-letter-title,
+  .request-letter-panel > .request-letter-lead,
+  .request-letter-panel > .request-letter-body,
+  .request-letter-panel > .request-letter-prompt,
+  .request-letter-panel > .request-letter-footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-topbar {
+    flex-shrink: 0 !important;
+    min-height: 0 !important;
+    padding: 12px 48px 12px 14px !important;
+    gap: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-brand {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  .request-letter-brand-copy {
+    min-width: 0 !important;
+  }
+
+  .request-letter-brand-mark {
+    width: 52px !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  .request-letter-brand-img {
+    width: 48px !important;
+  }
+
+  .request-letter-brand-name {
+    font-size: 17px !important;
+    line-height: 1.1 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .request-letter-brand-subtitle {
+    font-size: 10px !important;
+  }
+
+  .request-letter-close {
+    top: 8px !important;
+    right: 8px !important;
+    z-index: 12 !important;
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 22px !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-kicker {
+    margin: 0 0 10px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .request-letter-divider {
+    margin: 0 0 10px !important;
+    height: 28px !important;
+    background-size: min(320px, 100%) auto !important;
+  }
+
+  .request-letter-title {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(22px, 6.4vw, 28px) !important;
+    line-height: 1.22 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    hyphens: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-lead {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 10px 0 18px !important;
+    padding-bottom: 16px !important;
+    font-size: 17px !important;
+    line-height: 1.38 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    font-size: 15px !important;
+    line-height: 1.62 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-body p,
+  .request-letter-body li,
+  .request-letter-invite {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
+
+  .request-letter-invite {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+
+  .request-letter-block-title {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 24px 0 12px !important;
+    padding-bottom: 10px !important;
+    font-size: clamp(20px, 5.6vw, 26px) !important;
+    line-height: 1.24 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-prompt {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 24px 0 20px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-prompt-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-top: 18px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-button {
+    width: 100% !important;
+    max-width: 320px !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .request-letter-note {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
 }
