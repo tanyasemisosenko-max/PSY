@@ -2,69 +2,149 @@
 
 Project: Примерочная себя
 Branch: mobile-rebuild
-Scope: laptop widths
-Status: issue confirmed / needs separate laptop layer
+Scope: laptop layout 961–1439px
+Status: passed / ready for commit
 
-## Summary
+## Context
 
-Laptop issue is confirmed.
-The site uses a fixed desktop canvas around 1448px. On laptop widths 1280px and 1366px, the layout is wider than the viewport. Because body has overflow-x hidden, there is no visible horizontal scrollbar, but the right side of the desktop composition can be clipped.
-This is not a mobile issue and not caused by current mobile styles for max-width 640px.
+Laptop CSS-pass was completed inside:
+@media (min-width: 961px) and (max-width: 1439px)
+
+Mobile ≤640px was protected.
+Tablet 641–960px was protected.
+Desktop ≥1448px was protected.
+HTML / JS / photos / decor were not changed.
+
+## Approach
+
+Mixed approach:
+- desktop 1448px canvas sections are scaled down to fit laptop viewport widths
+- transform matrix uses 100vw / 1448
+- main and footer remain fluid
+- letter modal remains fixed and is not scaled
+- mobile/tablet breakpoints are untouched
 
 ## Checked widths
 
+- 1024px
+- 1280px
+- 1366px
+- 1439px
+
+Control widths:
+- 960px
+- 1440px
+- 1448px
+
+## Results
+
+### 1024px
+
+window.innerWidth: 1024
+Applied scale: 0.707182
+Horizontal scroll: no
+Right clipping: no
+All 10 screens in correct order: yes
+Section overlaps: no
+Large empty gaps: no
+Clipped headings: no
+Clipped text: no
+Photos / decor: ok
+Cards: readable
+Nav / CTA: visible and clickable
+Letter modal: opens and closes
+Page after modal close: not blank
+Contact form: visually accessible
+Footer: correct
+Problem screens: none
+Notes: desktop proportions preserved at about 70.7% scale
+
 ### 1280px
 
-Problems: yes
-Issues:
-- desktop content is wider than viewport by about 168px
-- right side of the layout is clipped
-- hero photo/right column can be near edge or partly outside viewport
-- header button "Записаться" can be too far right
-- second CTA and benefits can be near edge or outside visible area
-- similar risk exists for Recognition, Requests and screens 3-10 because of absolute positioning and right columns
+window.innerWidth: 1280
+Applied scale: 0.883978
+Horizontal scroll: no
+Right clipping: no
+All 10 screens in correct order: yes
+Section overlaps: no
+Large empty gaps: no
+Clipped headings: no
+Clipped text: no
+Photos / decor: ok
+Cards: readable
+Nav / CTA: visible and clickable
+Letter modal: opens and closes
+Page after modal close: not blank
+Contact form: visually accessible
+Footer: correct
+Problem screens: none
 
 ### 1366px
 
-Problems: yes, weaker
-Issues:
-- desktop content is wider than viewport by about 82px
-- slight right-edge clipping
-- header button, hero/recognition photo and right-side CTA can be close to edge or partly clipped
+window.innerWidth: 1366
+Applied scale: 0.943370
+Horizontal scroll: no
+Right clipping: no
+All 10 screens in correct order: yes
+Section overlaps: no
+Large empty gaps: no
+Clipped headings: no
+Clipped text: no
+Photos / decor: ok
+Cards: readable
+Nav / CTA: visible and clickable
+Letter modal: opens and closes
+Page after modal close: not blank
+Contact form: visually accessible
+Footer: correct
+Problem screens: none
+
+### 1439px
+
+window.innerWidth: 1439
+Applied scale: 0.993785
+Horizontal scroll: no
+Right clipping: no
+All 10 screens in correct order: yes
+Section overlaps: no
+Large empty gaps: no
+Clipped headings: no
+Clipped text: no
+Photos / decor: ok
+Cards: readable
+Nav / CTA: visible and clickable
+Letter modal: opens and closes
+Page after modal close: not blank
+Contact form: visually accessible
+Footer: correct
+Problem screens: none
+Notes: near 1:1 desktop proportions
+
+## Control checks
+
+### 960px
+
+Tablet remained working: yes
+New problems after laptop-pass: no
+Laptop media query applied: no
 
 ### 1440px
 
-Problems: yes, minimal
-Issues:
-- desktop content is wider than viewport by about 8px
-- almost fits
-- possible slight edge clipping
-- hero and buttons are mostly readable
+Laptop-pass applied: no
+Old light right clip around 8px: remains
+New problems: no
+Notes: 1440px is outside the laptop media query max-width 1439px. This should be handled separately as a small edge-fix if desired.
 
-## Cause
+### 1448px
 
-The issue comes from fixed desktop canvas logic:
-- desktop sections around 1448px
-- absolute positioning
-- right-side columns and buttons
-- overflow-x hidden hides the overflow instead of showing the problem
+Desktop ≥1448 remained working: yes
+Transform / scale absent: yes
+New problems: no
 
-## Conclusion
+## Final result
 
-This is a laptop issue, not a mobile issue.
-A separate laptop layer is needed for approximately:
-961px-1447px
-Goal:
-Show the desktop scenario on laptop without clipping the right side.
-
-## Recommendation
-
-Do not fix laptop inside the mobile Recognition task.
-Create a separate task later:
-Laptop Layer / 961-1447px
-Possible solution direction:
-- keep desktop design for 1448px+
-- add laptop adaptation for 1280 / 1366 / 1440px
-- scale or constrain desktop canvas safely
-- prevent right-side clipping
-- keep desktop 1448+ unchanged
+Laptop audit 961–1439 passed.
+Problem widths in laptop range: none
+Problem screens in laptop range: none
+Need more laptop CSS fixes before audit file: no
+Recommended next step: optional 1440–1447 edge-fix, then commit laptop pass.
