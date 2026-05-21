@@ -8291,3 +8291,615 @@ header.site-header {
     word-break: normal !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   TABLET REBUILD 641–960px · LAPTOP_TABLET_REBUILD_SPEC.md
+   (только этот диапазон; mobile ≤640 и desktop ≥961 не трогаем)
+   ═══════════════════════════════════════════════════════════════ */
+@media (min-width: 641px) and (max-width: 960px) {
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    padding-bottom: 88px !important;
+  }
+
+  /* Sticky CTA (перекрывает скрытие в fluid shell <=960) */
+  .mobile-cta {
+    display: block !important;
+    left: 24px;
+    right: 24px;
+    bottom: max(16px, env(safe-area-inset-bottom, 0px));
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 28px;
+    padding-right: 28px;
+    box-sizing: border-box;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .hero-section,
+  .recognition-section,
+  #requests,
+  #formats,
+  #after,
+  #about,
+  #approach,
+  #process,
+  #reviews,
+  #contact {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  /* Topbar: без поломанной desktop-навигации */
+  .formats-topbar,
+  .after-topbar,
+  .approach-topbar,
+  .process-topbar,
+  .reviews-topbar,
+  .contact-topbar,
+  .about-topbar,
+  .requests-topbar,
+  #requests .requests-topbar,
+  .recognition-section .site-header,
+  [class*="topbar"] {
+    display: none !important;
+  }
+
+  .hero-section .site-header {
+    display: block !important;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 28px 0;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  .hero-section .main-nav,
+  .hero-section .header-button,
+  .recognition-section .main-nav,
+  .recognition-section .header-button {
+    display: none !important;
+  }
+
+  /* ── Hero ── */
+  .hero-section .hero-left-composition {
+    display: none !important;
+  }
+
+  .hero-section .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-section .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 28px 32px !important;
+    box-sizing: border-box;
+  }
+
+  .hero-section .hero-title {
+    font-size: clamp(36px, 5.2vw, 44px) !important;
+    line-height: 1.08 !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+  .hero-section .hero-description {
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+  .hero-section .hero-actions {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px !important;
+    margin-top: 24px !important;
+  }
+
+  .hero-section .button-primary,
+  .hero-section .button-secondary,
+  .hero-section .hero-actions .btn {
+    position: static !important;
+    width: 100% !important;
+    max-width: min(100%, 420px) !important;
+    min-width: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  .hero-section .button-secondary {
+    display: inline-flex !important;
+  }
+
+  .hero-section .hero-photo {
+    position: relative !important;
+    width: 100% !important;
+    max-width: min(480px, 100%) !important;
+    height: auto !important;
+    max-height: none;
+    margin: 0 auto !important;
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-section .hero-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .hero-section .hero-benefits {
+    position: static !important;
+    width: calc(100% - 56px) !important;
+    max-width: 100% !important;
+    margin: 24px 28px 32px !important;
+    height: auto !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .hero-section .hero-note {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ── Recognition ── */
+  .recognition-section .recognition-left-decor-wrap,
+  .recognition-section .recognition-left-decor {
+    display: none !important;
+  }
+
+  .recognition-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 56px 28px 72px !important;
+    margin: 0 auto !important;
+    gap: 0;
+  }
+
+  .recognition-section .recognition-photo {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    order: 2;
+    width: 100% !important;
+    max-width: min(480px, 100%) !important;
+    height: auto !important;
+    margin: 0 auto 32px !important;
+    aspect-ratio: 4 / 5;
+  }
+
+  .recognition-section .recognition-photo img {
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: cover;
+  }
+
+  .recognition-section .recognition-content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    order: 1;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .recognition-section .recognition-title {
+    font-size: clamp(40px, 5.5vw, 56px) !important;
+    line-height: 1.06 !important;
+  }
+
+  .recognition-section .recognition-subtitle {
+    font-size: clamp(18px, 2.4vw, 20px) !important;
+    line-height: 1.45 !important;
+  }
+
+  .recognition-section .recognition-cards {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 28px !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 16px !important;
+    row-gap: 16px !important;
+  }
+
+  .recognition-section .recognition-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 168px;
+  }
+
+  .recognition-section .recognition-card-text {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .recognition-section .recognition-button {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: min(100%, 420px) !important;
+    margin: 28px auto 0 !important;
+    transform: none !important;
+    box-sizing: border-box;
+  }
+
+  /* ── Requests ── */
+  #requests::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .requests-section .requests-left-decor,
+  .requests-section .requests-right-decor {
+    display: none !important;
+  }
+
+  #requests.requests-section,
+  .requests.requests-section {
+    padding: 56px 28px 72px !important;
+    overflow-x: hidden;
+  }
+
+  .requests-section .requests-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .requests-section .requests-container .requests-grid,
+  .requests-section .requests-grid,
+  .requests .cards-grid.requests-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 32px !important;
+  }
+
+  .requests-section .requests-card,
+  .requests .card.card-rich.requests-card {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 24px 20px !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .requests-section .requests-card-icon {
+    margin: 0 auto 12px !important;
+  }
+
+  .requests-section .requests-foot {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 32px !important;
+    padding: 0 !important;
+    text-align: center;
+  }
+
+  .requests-section .requests-foot .btn,
+  .requests-section .requests-foot a {
+    max-width: min(100%, 420px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── Formats ── */
+  #formats.formats {
+    padding: 56px 28px 72px !important;
+    min-height: 0 !important;
+    overflow-x: hidden;
+  }
+
+  #formats .formats-scene,
+  #formats .formats-main,
+  #formats .formats-grid,
+  #formats .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+  }
+
+  #formats .formats-decor,
+  #formats .formats-bg-media,
+  #formats .formats-bg-layer,
+  #formats .formats-bg-curtain,
+  #formats .formats-bg-right,
+  #formats .formats-bg-plant {
+    display: none !important;
+  }
+
+  #formats .formats-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    margin-top: 32px !important;
+  }
+
+  #formats .format-card {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  #formats .formats-cta .btn,
+  #formats .formats-cta a {
+    max-width: min(100%, 420px);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ── After / Approach / Process ── */
+  #after.section#after,
+  #approach.section,
+  #process.section {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+    overflow-x: hidden;
+  }
+
+  #after::before,
+  #approach::before,
+  #process::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  #after .after-image {
+    display: none !important;
+  }
+
+  .after-grid,
+  .approach-grid,
+  .process-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .cards-2,
+  .cards-3,
+  .cards-6,
+  .cards-recognition {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+
+  .card-rich,
+  .format,
+  .review-card {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 24px 22px;
+  }
+
+  /* ── About (tablet: фото, без desktop decor) ── */
+  #about.section#about {
+    padding: 56px 28px 72px !important;
+    overflow-x: hidden;
+  }
+
+  #about::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+  }
+
+  #about .about-topbar {
+    display: none !important;
+  }
+
+  #about .about-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  #about .about-image {
+    display: block !important;
+    order: -1;
+    width: 100% !important;
+    max-width: min(480px, 100%) !important;
+    margin: 0 auto !important;
+    aspect-ratio: 4 / 5;
+  }
+
+  #about .about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  #about .about-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+  }
+
+  /* ── Reviews ── */
+  #reviews.section {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+    overflow-x: hidden;
+  }
+
+  #reviews::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .reviews-grid {
+    gap: 18px !important;
+  }
+
+  .review-card {
+    min-width: 0;
+  }
+
+  /* ── Contact ── */
+  #contact.section {
+    padding: 56px 28px 96px !important;
+    overflow-x: hidden;
+  }
+
+  #contact::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 28px 24px;
+    box-sizing: border-box;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .contact-form .btn,
+  .contact-text .btn,
+  .btn-primary,
+  .button-primary {
+    max-width: min(100%, 420px);
+    box-sizing: border-box;
+  }
+
+  /* ── Letter modal (desktop overlay, tablet-safe) ── */
+  .request-letter-overlay[hidden] {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .request-letter-overlay {
+    padding: 24px 20px;
+    overflow-x: hidden;
+  }
+
+  .request-letter-dialog {
+    width: min(720px, calc(100vw - 40px)) !important;
+    max-width: calc(100vw - 40px) !important;
+    max-height: calc(100vh - 48px);
+    margin: 0 auto;
+  }
+
+  .request-letter-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 56px 24px 48px;
+    box-sizing: border-box;
+  }
+
+  /* ── CTA / кнопки по странице ── */
+  .section .btn,
+  .section a.btn-primary,
+  .section .button-primary,
+  .section .button-secondary {
+    max-width: min(100%, 420px);
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Tablet narrow 641–767: одна колонка для плотных сеток */
+@media (min-width: 641px) and (max-width: 767px) {
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cards-6,
+  .cards-3,
+  .cards-2,
+  .requests-section .requests-container .requests-grid,
+  .requests-section .requests-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .recognition-section .recognition-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-section .hero-benefits {
+    grid-template-columns: 1fr !important;
+  }
+
+  .trust-markers {
+    grid-template-columns: 1fr !important;
+  }
+}
